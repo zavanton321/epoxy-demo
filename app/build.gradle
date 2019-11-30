@@ -1,6 +1,8 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+
+// Epoxy needs it
 apply plugin: 'kotlin-kapt'
 
 android {
@@ -22,6 +24,7 @@ android {
     }
 }
 
+// Epoxy needs it
 kapt {
     correctErrorTypes = true
 }
@@ -36,10 +39,11 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
 
+    // RecyclerView
     implementation "androidx.recyclerview:recyclerview:1.1.0"
 
+    // Epoxy
     def epoxy_version = "3.8.0"
-
     dependencies {
         implementation "com.airbnb.android:epoxy:${epoxy_version}"
         kapt "com.airbnb.android:epoxy-processor:${epoxy_version}"
